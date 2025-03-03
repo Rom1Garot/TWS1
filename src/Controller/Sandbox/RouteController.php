@@ -96,4 +96,10 @@ class RouteController extends AbstractController
         );
         return $this->render('Sandbox/Route/test4bis.html.twig', $args);
     }
+
+    #[Route('/redirect1', name: '_redirect1')]
+    public function _redirect1Action(): Response
+    {
+        return $this->redirectToRoute('sandbox_prefix_hello2');
+    }
 }
