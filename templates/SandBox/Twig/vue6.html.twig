@@ -1,0 +1,18 @@
+{% extends 'Sandbox/Layouts/layout3.html.twig' %}
+{%  block title %}{{ parent() }}: vue5{% endblock %}
+{%  block  titre_principal%}titre principal{% endblock %}
+{%  block vue %}
+    <h2>QUI EST CE QUE QUOI</h2>
+
+    <p> MOI : {{ prenom }} MON MAIL : {{ mail }} et un beau tableau : {{ dump(offres) }}</p>
+    <p>
+    <h2>liste mention :</h2>
+        <ul>
+            {% for nomCourt, mention in offres.mentions %}
+            <li>{{ mention.nom|upper }}({{ nomCourt }})</li>
+            {% endfor %}
+        </ul>
+    </p>
+{% endblock %}
+
+
